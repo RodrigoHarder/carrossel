@@ -11,8 +11,6 @@ body {
     width: 800px;
     height: 300px;
     overflow: hidden;
-    border: 2px solid #ccc;
-    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
   }
@@ -27,31 +25,57 @@ body {
     height: 300px;
     flex-shrink: 0;
   }
-  
+
   .botao-carrossel {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    width: 40px;
+    height: 40px;
     border: none;
-    padding: 10px 15px;
+    background: none;
     cursor: pointer;
-    font-size: 18px;
     z-index: 10;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .botao-carrossel:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
   }
   
   .anterior {
     left: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 12px 7px 0;
+    border-color: transparent white transparent transparent;
   }
   
   .proximo {
     right: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 12px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  .indicadores {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .indicador {
+    width: 25px;
+    height: 3px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .indicador.ativo {
+    background-color: #333;
+    transform: scale(1.2);
   }
   
